@@ -1,6 +1,11 @@
 <template>
   <div>
-    <el-row :gutter="12" v-for="(toolGroup, idx) in spatialTools" :key="idx">
+    <el-row
+      class="tool-row"
+      :gutter="12"
+      v-for="(toolGroup, idx) in spatialTools"
+      :key="idx"
+    >
       <el-col :span="8" v-for="(tool, index) in toolGroup" :key="index">
         <tool-link
           :link="tool.link"
@@ -58,3 +63,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.tool-row:not(:first-child) {
+  margin-top: 0.5rem;
+}
+</style>

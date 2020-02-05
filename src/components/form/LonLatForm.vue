@@ -47,26 +47,29 @@ export default {
     }
   },
   watch: {
-    tableColumns() {
-      let columns = []
-      this.tableColumns.forEach((val, idx) => {
-        let column = {
-          label: val,
-          value: val,
-        }
-        if (Util.isLongitude(val)) {
-          this.selectedLon = val
-        }
-        if (Util.isLatitude(val)) {
-          this.selectedLat = val
-        }
-        if (idx === 0) {
-          this.selectedLabel = val
-        }
-        columns.push(column)
-      })
-      this.lonColumns = columns
-      this.latColumns = columns
+    tableColumns: {
+      handler() {
+        let columns = []
+        this.tableColumns.forEach((val, idx) => {
+          let column = {
+            label: val,
+            value: val,
+          }
+          if (Util.isLongitude(val)) {
+            this.selectedLon = val
+          }
+          if (Util.isLatitude(val)) {
+            this.selectedLat = val
+          }
+          if (idx === 0) {
+            this.selectedLabel = val
+          }
+          columns.push(column)
+        })
+        this.lonColumns = columns
+        this.latColumns = columns
+      },
+      immediate: true,
     },
   },
 }
@@ -74,6 +77,6 @@ export default {
 
 <style>
 .el-form-item {
-  width: 480px;
+  width: 100%;
 }
 </style>

@@ -41,8 +41,8 @@
     </el-form-item>
     <el-form-item label="过滤方式" label-width="120px">
       <el-radio-group v-model="filterMethod">
-        <el-radio label="include">保留{{ type }}内的数据</el-radio>
-        <el-radio label="exclude">剔除{{ type }}内的数据</el-radio>
+        <el-radio label="include">被包含</el-radio>
+        <el-radio label="exclude">不被包含</el-radio>
       </el-radio-group>
     </el-form-item>
   </el-form>
@@ -111,6 +111,6 @@ export default {
 
 <style>
 .el-form-item {
-  width: 480px;
+  width: 100%;
 }
 </style>

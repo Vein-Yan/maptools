@@ -25,7 +25,7 @@ export default {
 </script>
 <style>
 body {
-  margin: 4px;
+  margin: 2px;
 }
 .el-header,
 .el-footer {

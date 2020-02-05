@@ -99,26 +99,31 @@ export default {
         customize: null,
       },
       customizeFeatures: [],
+      lonColumns: null,
+      latColumns: null,
     }
   },
   watch: {
-    tableColumns() {
-      let columns = []
-      this.tableColumns.forEach(val => {
-        let column = {
-          label: val,
-          value: val,
-        }
-        if (Util.isLongitude(val)) {
-          this.selectedLontitude = val
-        }
-        if (Util.isLatitude(val)) {
-          this.selectedLattitude = val
-        }
-        columns.push(column)
-      })
-      this.lonColumns = columns
-      this.latColumns = columns
+    tableColumns: {
+      handler() {
+        let columns = []
+        this.tableColumns.forEach(val => {
+          let column = {
+            label: val,
+            value: val,
+          }
+          if (Util.isLongitude(val)) {
+            this.selectedLontitude = val
+          }
+          if (Util.isLatitude(val)) {
+            this.selectedLattitude = val
+          }
+          columns.push(column)
+        })
+        this.lonColumns = columns
+        this.latColumns = columns
+      },
+      immediate: true,
     },
   },
   computed: {

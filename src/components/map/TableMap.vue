@@ -38,9 +38,10 @@ export default {
   },
   watch: {
     labelColumn() {
-      this.$nextTick(() => {
-        this.map && this.map.renderSync()
-      })
+      let features = this.vectorSource.getFeatures()
+      if (features && features.length > 0) {
+        features[0].set('label', this.labelColumn)
+      }
     },
     loadCount() {
       this.loadDataToMap()
