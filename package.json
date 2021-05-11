@@ -9,7 +9,7 @@
   "dependencies": {
     "core-js": "^3.4.4",
     "element-ui": "^2.13.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "ol": "^6.1.1",
     "papaparse": "^5.1.1",
     "promise-polyfill": "^8.1.3",
